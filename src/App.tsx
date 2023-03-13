@@ -1,9 +1,17 @@
-import './App.css'
+
+import LoadingDots from './components/LoadingDots'
+import NavBar from './components/NavBar'
+import Introduction from './components/IntroductionSection'
+import './scss/style.scss'
+import AboutSection from './components/AboutSection';
 
 function App() {
     return (
-        <div className='App'>
-            <header className='App-header'>HI There I am Sachin</header>
+        <div>
+            {/* <LoadingDots /> */}
+            <NavBar />
+            {/* <Introduction /> */}
+            <AboutSection/>
         </div>
     )
 }
