@@ -45,6 +45,7 @@
 
         .about-image {
             position: relative;
+            margin-bottom: 50px;
 
             @include breakpoint(medium) {
                 top: 50px;

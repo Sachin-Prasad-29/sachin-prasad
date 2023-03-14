@@ -39,6 +39,33 @@
         @include widthHeight(100%, 100%);
         object-fit: cover;
     }
+
+    .tech-box{
+        transition: 0.1s ease-in-out;
+        border: 3px solid #184A8F;
+        padding: 15px 10px;
+        border-radius: 4px;
+        width: 200px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+
+        span{
+            font-size: 0.8em;
+        }
+    }
+    .tech-box:hover{
+        cursor: pointer;
+        outline: 3px solid #86b1ed;
+        border: 0px solid #184A8F;
+        // border-radius: 0px;
+        // padding: 15px 15px;
+    }
+    .tech-img{
+        margin-top: 5px;
+        width: 35px !important;
+        margin-right: 10px;
+    }
 }
 
 .reveal {
