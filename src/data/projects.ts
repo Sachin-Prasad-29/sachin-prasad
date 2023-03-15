@@ -1,26 +1,25 @@
-interface Project {
-    sNo: number;
-    image: string;
-    title: string;
-    desc: string;
-    techStack: string[];
-    repoUrl: string;
-    liveUrl: string;
-}
-
+import { Project } from '../Interface/ProjectInterface';
 const projects: Project[] = [
     {
         sNo: 1,
-        image: 'https://i.ytimg.com/vi/l0W2e1mGntQ/maxresdefault.jpg',
-        title: 'Calender and event',
-        desc: 'this is the desc',
-        techStack: ['HTMl', 'CSS'],
+        image: 'https://raw.githubusercontent.com/Sachin-Prasad-29/sachin-prasad/work-branch/src/assets/project/calendar.png',
+        title: 'Calender and Events',
+        desc: 'A Calendar app using to create events,tasks & reminder with friends',
+        techStack: [
+            'HTMl',
+            'CSS',
+            'Javascript',
+            'VueJs',
+            'Vuetify',
+            'Express',
+            'MongoDB',
+        ],
         repoUrl: '"https://github.com/Sachin-Prasad-29/calendar-and-events-app',
         liveUrl: 'https://calendar-and-events.netlify.app',
     },
     {
         sNo: 2,
-        image: 'https://i.ytimg.com/vi/l0W2e1mGntQ/maxresdefault.jpg',
+        image: 'https://raw.githubusercontent.com/Sachin-Prasad-29/sachin-prasad/work-branch/src/assets/project/meeting.png',
         title: 'Calender and event',
         desc: 'this is the desc',
         techStack: ['HTMl', 'CSS'],
@@ -29,7 +28,7 @@ const projects: Project[] = [
     },
     {
         sNo: 3,
-        image: 'https://i.ytimg.com/vi/l0W2e1mGntQ/maxresdefault.jpg',
+        image: 'https://raw.githubusercontent.com/Sachin-Prasad-29/sachin-prasad/work-branch/src/assets/project/gamestore.png',
         title: 'Calender and event',
         desc: 'this is the desc',
         techStack: ['HTMl', 'CSS'],
@@ -38,7 +37,7 @@ const projects: Project[] = [
     },
     {
         sNo: 4,
-        image: 'https://i.ytimg.com/vi/l0W2e1mGntQ/maxresdefault.jpg',
+        image: 'https://raw.githubusercontent.com/Sachin-Prasad-29/sachin-prasad/work-branch/src/assets/project/grocery.png',
         title: 'Calender and event',
         desc: 'this is the desc',
         techStack: ['HTMl', 'CSS'],
@@ -47,7 +46,7 @@ const projects: Project[] = [
     },
     {
         sNo: 5,
-        image: 'https://i.ytimg.com/vi/l0W2e1mGntQ/maxresdefault.jpg',
+        image: 'https://raw.githubusercontent.com/Sachin-Prasad-29/sachin-prasad/work-branch/src/assets/project/colorpicker.png',
         title: 'Calender and event',
         desc: 'this is the desc',
         techStack: ['HTMl', 'CSS'],
@@ -56,7 +55,34 @@ const projects: Project[] = [
     },
     {
         sNo: 6,
-        image: 'https://i.ytimg.com/vi/l0W2e1mGntQ/maxresdefault.jpg',
+        image: 'https://raw.githubusercontent.com/Sachin-Prasad-29/sachin-prasad/work-branch/src/assets/project/project-man.png',
+        title: 'Calender and event',
+        desc: 'this is the desc',
+        techStack: ['HTMl', 'CSS'],
+        repoUrl: '"https://github.com/Sachin-Prasad-29/calendar-and-events-app',
+        liveUrl: 'https://calendar-and-events.netlify.app',
+    },
+    {
+        sNo: 7,
+        image: 'https://raw.githubusercontent.com/Sachin-Prasad-29/sachin-prasad/work-branch/src/assets/project/resturant.png',
+        title: 'Calender and event',
+        desc: 'this is the desc',
+        techStack: ['HTMl', 'CSS'],
+        repoUrl: '"https://github.com/Sachin-Prasad-29/calendar-and-events-app',
+        liveUrl: 'https://calendar-and-events.netlify.app',
+    },
+    {
+        sNo: 8,
+        image: 'https://raw.githubusercontent.com/Sachin-Prasad-29/sachin-prasad/work-branch/src/assets/project/todo-vue.png',
+        title: 'Calender and event',
+        desc: 'this is the desc',
+        techStack: ['HTMl', 'CSS'],
+        repoUrl: '"https://github.com/Sachin-Prasad-29/calendar-and-events-app',
+        liveUrl: 'https://calendar-and-events.netlify.app',
+    },
+    {
+        sNo: 9,
+        image: 'https://raw.githubusercontent.com/Sachin-Prasad-29/sachin-prasad/work-branch/src/assets/project/todo-vuex.png',
         title: 'Calender and event',
         desc: 'this is the desc',
         techStack: ['HTMl', 'CSS'],

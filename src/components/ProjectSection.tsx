@@ -1,16 +1,30 @@
-import React from 'react';
+import { useState } from 'react';
 import projects from '../data/projects';
 import { githubUrl } from '../data/urls';
+import LinkIcon from './utilComponents/LinkIcon';
+import ProjectCard from './utilComponents/ProjectCard';
+import ShowLess from './utilComponents/ShowLess';
+import ShowMore from './utilComponents/ShowMore';
 
 const ProjectSection = () => {
+    const [count, setCount] = useState(5);
+    const numbers = [];
+    for (let i = 0; i <= count; i++) {
+        numbers.push(i);
+    }
+    const handleCount = (value: number) => {
+        setCount(value);
+    };
+
     return (
         <section id="work">
             <div className="work container">
                 <div className="work-info">
                     <h2 className="section-title">Things I've Built.</h2>
                     <p className="section-paragraph">
-                        Here's a selection of my hobby creations for brushing up
-                        my skills. For more, kindly check out my
+                        Take a look at some of my hobby projects below, which
+                        I've worked on to refine my skills. For a more
+                        comprehensive list, please feel free to browse my
                         <a
                             href={githubUrl}
                             className="no-select"
@@ -18,55 +32,25 @@ const ProjectSection = () => {
                             rel="noopener noreferrer"
                         >
                             <b className="link-tag">
-                                <i className="fa-solid fa-link"></i>Github
+                                <LinkIcon />
+                                Github Profile
                             </b>
                         </a>
                     </p>
                 </div>
                 <div className="work-details">
-                    {projects.map((project) => {
-                        return (
-                            <div key={project.sNo} className="card">
-                                <div className="icon">
-                                    <img
-                                        src={project.image}
-                                        alt=""
-                                        style={{
-                                            width: '300px',
-                                            border: '1px solid rgba(156, 153, 153, 0.589)',
-                                        }}
-                                    />
-                                </div>
-                                <h2>{project.title}</h2>
-                                <p>{project.desc} </p>
-                                <ul className="tech-stack">
-                                    {project.techStack.map((tech, index) => (
-                                        <li key={index}>{tech}</li>
-                                    ))}
-                                </ul>
-                                <a
-                                    className="link-tag"
-                                    href={project.repoUrl}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    <i className="fab fa-github"></i>Repo-link
-                                </a>
-
-                                <a
-                                    className="link-tag"
-                                    href={project.liveUrl}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    <i className="fas fa-external-link-alt"></i>
-                                    Live-link
-                                </a>
-                            </div>
-                        );
-                    })}
+                    {numbers.map((num) => (
+                        <ProjectCard
+                            project={projects[num]}
+                            key={projects[num].sNo}
+                        />
+                    ))}
                 </div>
             </div>
+            {count === 5 && (
+                <ShowMore handleCount={handleCount} projects={projects} />
+            )}
+            {count > 5 && <ShowLess handleCount={handleCount} />}
         </section>
     );
 };

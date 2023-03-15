@@ -1,44 +1,36 @@
-interface Experience {
-    sNo: number;
-    org: string;
-    desination: string;
-    year: number;
-    period: string;
-    url: string;
-}
-
+import { Experience } from '../Interface/ExperienceInterface';
 const experiences: Experience[] = [
     {
         sNo: 1,
-        org: 'TCS',
-        desination: 'ASE',
-        year: 2022,
-        period: '2021-2022',
+        org: 'Xlscout',
+        desination: 'Software Product Developer - 1',
+        year: 'Present',
+        period: 'November 2022 - Present',
         url: 'www.google.com',
     },
     {
         sNo: 2,
-        org: 'TCS',
-        desination: 'ASE',
-        year: 2022,
-        period: '2021-2022',
-        url: 'www.google.com',
+        org: 'Tata Consultancy Services',
+        desination: 'Assistant System Engineer',
+        year: '2022',
+        period: 'October 2021 - October 2022',
+        url: 'https://www.tcs.com/',
     },
     {
         sNo: 3,
-        org: 'TCS',
-        desination: 'ASE',
-        year: 2022,
-        period: '2021-2022',
-        url: 'www.google.com',
+        org: 'Jawaharlal Nehru Technological University, Hyderabad',
+        desination: 'Bachelor of Technology in Computer Science',
+        year: '2021',
+        period: 'August 2017 - September 2021',
+        url: 'https://jntuh.ac.in/',
     },
     {
         sNo: 4,
-        org: 'TCS',
-        desination: 'ASE',
-        year: 2022,
-        period: '2021-2022',
-        url: 'www.google.com',
+        org: ' St. Vincent Pallotti School, Korba',
+        desination: '10th - 12th Standard',
+        year: '2017',
+        period: 'April 2014 - April 2017',
+        url: 'https://stvincentpallottikorba.com/',
     },
 ];
 export default experiences;

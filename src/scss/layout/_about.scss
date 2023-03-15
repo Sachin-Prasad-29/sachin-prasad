@@ -25,6 +25,11 @@
                     color: var(--subtitleColor);
                     padding-right: 0.5em;
                 }
+
+                a{
+                   text-decoration: none; 
+
+                }
             }
         }
         @media  (max-width:700px) {

@@ -1,5 +1,7 @@
 import React from 'react';
+import { BiCloudDownload } from 'react-icons/bi';
 import Intro from '../assets/images/Intro.gif';
+import { resumeUrl } from '../data/urls';
 
 const IntroductionSection = () => {
     const styleOne = {
@@ -27,18 +29,20 @@ const IntroductionSection = () => {
                     <h1>Sachin Kumar Prasad.</h1>
                     <span style={styleOne}>A Full Stack Developer </span>
                     <p style={styleTwo}>
-                        I build Interactive Client and Server side Application that run across platforms
-                        and devices.
+                        I build Interactive Client and Server side Application
+                        that run across platforms and devices.
                     </p>
                     <div className="btn">
                         <button className="btn-resume">
                             <a
-                                href="https://drive.google.com/file/d/1RXmPlk1QFEkcpofOKar9UD-iuzDNzLPF/view?usp=sharing"
+                                href={resumeUrl}
                                 target="_blank"
                                 rel="noreferrer"
                             >
-                                Resume&emsp;
-                                
+                                <span> Resume&emsp;</span>
+                                <span>
+                                    <BiCloudDownload className="icon" />
+                                </span>
                             </a>
                         </button>
                     </div>

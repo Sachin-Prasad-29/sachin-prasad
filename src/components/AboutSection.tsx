@@ -1,6 +1,6 @@
 import React from 'react';
-import myPic from '../assets/images/my-pic.jpg';
 import myPic2 from '../assets/images/my-pic-2.jpeg';
+import myPic from '../assets/images/my-pic.jpg';
 import BOOT from '../assets/logo/boot.svg';
 import CSS from '../assets/logo/css.svg';
 import ES from '../assets/logo/es.svg';
@@ -19,6 +19,7 @@ import SQL from '../assets/logo/sql.svg';
 import TS from '../assets/logo/ts.svg';
 import VUE from '../assets/logo/vue.svg';
 import technologies from '../data/technologies';
+import TechBadges from './utilComponents/TechBadges';
 
 const AboutSection: React.FC = () => {
     const getTechLogo = (prop: string) => {
@@ -79,45 +80,28 @@ const AboutSection: React.FC = () => {
                         both the front-end and back-end of web applications.
                     </p>
                     <p className="section-paragraph">
-                        With a passion for crafting robust, efficient code, I
-                        leverage a deep understanding of programming languages,
-                        frameworks, and development tools to create engaging
-                        user experiences. I am equally comfortable working
-                        independently or as part of a team, always striving to
-                        meet project goals and deadlines.
+                        I use my expertise in programming languages, frameworks,
+                        and development tools to create engaging user
+                        experiences. I can work independently or as part of a
+                        team to meet project goals and deadlines..
                     </p>
                     <p className="section-paragraph">
-                        My expertise extends across the entire software
-                        development life cycle, from planning and prototyping to
-                        testing and deployment. Above all, I am dedicated to
-                        delivering high-quality solutions that meet the unique
-                        needs of each client and end user.
+                        "I am skilled in the entire software development
+                        process, including planning, prototyping, testing, and
+                        deployment. My priority is delivering top-notch
+                        solutions that cater to the specific needs of clients
+                        and end users.
                     </p>
                     <h3 style={{ color: '#CCD6F6' }}>Technologies and Tools</h3>
 
                     <ul>
-                        {technologies.map((tech) => {
-                            return (
-                                <li
-                                    key={tech.sNo}
-                                    style={{
-                                        fontSize: '20px',
-                                        color: tech.color,
-                                    }}
-                                >
-                                    <div className="tech-box">
-                                        <span>
-                                            <img
-                                                className="tech-img"
-                                                src={getTechLogo(tech.logo)}
-                                                alt=""
-                                            />
-                                        </span>
-                                        <span>{tech.name}</span>
-                                    </div>
-                                </li>
-                            );
-                        })}
+                        {technologies.map((tech) => (
+                            <TechBadges
+                                tech={tech}
+                                getTechLogo={getTechLogo}
+                                key={tech.sNo}
+                            />
+                        ))}
                     </ul>
                 </div>
                 <div className="col-right">

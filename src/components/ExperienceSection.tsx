@@ -1,6 +1,9 @@
 import React from 'react';
+import { BiCloudDownload } from 'react-icons/bi';
+import ExLogo from '../assets/images/ex-logo.gif';
 import experiences from '../data/experiences';
 import { resumeUrl } from '../data/urls';
+import ExperienceBadges from './utilComponents/ExperienceBadges';
 
 const ExperienceSection = () => {
     return (
@@ -19,35 +22,12 @@ const ExperienceSection = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {experiences.map((experience) => {
-                                return (
-                                    <tr key={experience.sNo}>
-                                        <td className="year">
-                                            {experience.year}
-                                        </td>
-                                        <td>
-                                            <span className="title">
-                                                <i className="fa-solid fa-briefcase"></i>
-                                                &emsp;{experience.desination}
-                                            </span>
-                                            <strong>
-                                                <br />
-                                                <a
-                                                    href={experience.url}
-                                                    target="_blank"
-                                                    className="no-select"
-                                                    rel="noopener noreferrer"
-                                                >
-                                                    @{experience.org}
-                                                </a>
-                                            </strong>
-                                            <div className="time">
-                                                {experience.period}
-                                            </div>
-                                        </td>
-                                    </tr>
-                                );
-                            })}
+                            {experiences.map((experience) => (
+                                <ExperienceBadges
+                                    experience={experience}
+                                    key={experience.sNo}
+                                />
+                            ))}
                         </tbody>
                     </table>
 
@@ -58,8 +38,10 @@ const ExperienceSection = () => {
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                Resume&emsp;
-                                <i className="fa-solid fa-circle-down"></i>
+                                <span> Resume&emsp;</span>
+                                <span>
+                                    <BiCloudDownload className="icon" />
+                                </span>
                             </a>
                         </button>
                     </div>
@@ -68,7 +50,7 @@ const ExperienceSection = () => {
                 <div className="col-right">
                     <img
                         className="avatar"
-                        src="img/investment-data-animate.svg"
+                        src={ExLogo}
                         alt="my-cartoon-avatar"
                     />
                 </div>

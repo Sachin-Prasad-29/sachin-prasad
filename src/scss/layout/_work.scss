@@ -94,9 +94,18 @@
             }
         }
     }
+    .link-icon {
+        width: 20px;
+        position: relative;
+        top: 4px;
+        margin: 0 5px;
+    }
+   
 }
 .link-tag {
     color: rgb(112, 112, 242);
+    align-items: center;
+    width: 200px;
     padding-right: 5px;
 }
 .link-tag:hover {
