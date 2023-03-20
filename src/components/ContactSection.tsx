@@ -1,6 +1,34 @@
-import React from 'react';
+import emailjs from 'emailjs-com';
+import React, { useState } from 'react';
 
 const ContactSection = () => {
+    const [name, setName] = useState<string>('');
+    const [email, setEmail] = useState<string>('');
+    const [message, setMessage] = useState<string>('');
+
+    const sendMessage = (e: React.MouseEvent) => {
+        e.preventDefault();
+        const payload = {
+            from_name: name,
+            email_id: email,
+            message,
+        };
+        const serviceID: any = process.env.REACT_APP_SER_ID;
+        const templateID: any = process.env.REACT_APP_TEMP_ID;
+        const publicKey: any = process.env.REACT_APP_PUB_ID;
+        emailjs.send(serviceID, templateID, payload, publicKey).then(
+            (result) => {
+                alert('Email Sent Successfully..');
+                setName('');
+                setEmail('');
+                setMessage('');
+            },
+            (error) => {
+                console.log(error.text);
+            }
+        );
+    };
+
     return (
         <section id="contact">
             <div className="contact container">
@@ -21,6 +49,8 @@ const ContactSection = () => {
                             autoComplete="off"
                             spellCheck="false"
                             required
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
                         />
                         <label>Name:</label>
                     </div>
@@ -33,6 +63,8 @@ const ContactSection = () => {
                             autoComplete="off"
                             spellCheck="false"
                             required
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
                         />
                         <label>Email:</label>
                     </div>
@@ -43,6 +75,8 @@ const ContactSection = () => {
                             id="message"
                             autoComplete="off"
                             required
+                            value={message}
+                            onChange={(e) => setMessage(e.target.value)}
                         ></textarea>
                         <label>Message:</label>
                     </div>
@@ -50,18 +84,7 @@ const ContactSection = () => {
                     <div className="btn">
                         <button
                             className="btn-submit"
-                            //   onClick="(function(){
-
-                            //     console.log('Hellow')
-                            //     var params = {
-                            //         from_name: document.getElementById('full_name').value,
-                            //         email_id: document.getElementById('email_id').value,
-                            //         message: document.getElementById('message').value,
-                            //     };
-                            //     emailjs.send('service_kpxk7ih', 'template_wov0i27', params).then(function (res) {
-                            //         alert('Successfully sent message!');
-                            //     });
-                            // })()"
+                            onClick={(e) => sendMessage(e)}
                         >
                             Send Message
                         </button>
