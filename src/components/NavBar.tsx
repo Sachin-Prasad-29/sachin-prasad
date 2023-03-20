@@ -1,40 +1,60 @@
-import React from 'react'
-import LogoImg from '../assets/images/logo.svg'
+import React, { useEffect, useState } from 'react';
+import LogoImg from '../assets/images/logo.svg';
 
-const NavBar = () => {
+const NavBar = ({ NavClass }: { NavClass: string }) => {
+    const [className, setclassName] = useState<string>('header container');
+    useEffect(() => {
+        setclassName(`header container ${NavClass}`);
+    }, [NavClass]);
     return (
-        <header id='header'>
-            <div className='header container'>
-                <nav className='nav-bar'>
-                    <div className='logo'>
-                        <a href='index.html' className='no-select logo'>
+        <header id="header">
+            <div className={className}>
+                <nav className="nav-bar">
+                    <div className="logo">
+                        <a href="index.html" className="no-select logo">
                             <img src={LogoImg} alt="sachin's logo" />
                         </a>
                     </div>
-                    <div className='nav-list'>
-                        <label id='hamburger' className='no-select'>
+                    <div className="nav-list">
+                        <label id="hamburger" className="no-select">
                             <span></span>
                             <span></span>
                             <span></span>
                         </label>
-                        <ul className='mobile-menu'>
+                        <ul className="mobile-menu">
                             <li>
-                                <a href='#about' data-after='About' className='no-select'>
+                                <a
+                                    href="#about"
+                                    data-after="About"
+                                    className="no-select"
+                                >
                                     About
                                 </a>
                             </li>
                             <li>
-                                <a href='#experience' data-after='Experience' className='no-select'>
+                                <a
+                                    href="#experience"
+                                    data-after="Experience"
+                                    className="no-select"
+                                >
                                     Experience
                                 </a>
                             </li>
                             <li>
-                                <a href='#work' data-after='work' className='no-select'>
+                                <a
+                                    href="#work"
+                                    data-after="work"
+                                    className="no-select"
+                                >
                                     Projects
                                 </a>
                             </li>
                             <li>
-                                <a href='#contact' data-after='contact' className='no-select'>
+                                <a
+                                    href="#contact"
+                                    data-after="contact"
+                                    className="no-select"
+                                >
                                     Contact
                                 </a>
                             </li>
@@ -43,7 +63,7 @@ const NavBar = () => {
                 </nav>
             </div>
         </header>
-    )
-}
+    );
+};
 
-export default NavBar
+export default NavBar;

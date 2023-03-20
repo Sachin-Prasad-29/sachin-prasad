@@ -6,7 +6,7 @@ import ProjectCard from './utilComponents/ProjectCard';
 import ShowLess from './utilComponents/ShowLess';
 import ShowMore from './utilComponents/ShowMore';
 
-const ProjectSection = () => {
+const ProjectSection = ({ ProjectClass }: { ProjectClass: string }) => {
     const [count, setCount] = useState(5);
     const numbers = [];
     for (let i = 0; i <= count; i++) {

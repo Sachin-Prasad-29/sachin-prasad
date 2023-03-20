@@ -3,7 +3,7 @@ import { BiCloudDownload } from 'react-icons/bi';
 import Intro from '../assets/images/Intro.gif';
 import { resumeUrl } from '../data/urls';
 
-const IntroductionSection = () => {
+const IntroductionSection = ({ IntroClass }: { IntroClass: string }) => {
     const styleOne = {
         color: 'rgb(12, 221, 221)',
         fontWeight: 700,

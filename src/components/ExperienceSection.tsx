@@ -5,7 +5,7 @@ import experiences from '../data/experiences';
 import { resumeUrl } from '../data/urls';
 import ExperienceBadges from './utilComponents/ExperienceBadges';
 
-const ExperienceSection = () => {
+const ExperienceSection = ({ ExpClass }: { ExpClass: string }) => {
     return (
         <section id="experience">
             <div className="experience container ">

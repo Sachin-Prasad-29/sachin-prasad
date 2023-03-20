@@ -21,7 +21,7 @@ import VUE from '../assets/logo/vue.svg';
 import technologies from '../data/technologies';
 import TechBadges from './utilComponents/TechBadges';
 
-const AboutSection: React.FC = () => {
+const AboutSection = ({ AboutClass }: { AboutClass: string }) => {
     const getTechLogo = (prop: string) => {
         switch (prop) {
             case 'JS':

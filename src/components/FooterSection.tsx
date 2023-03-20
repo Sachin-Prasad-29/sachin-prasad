@@ -1,12 +1,11 @@
+import Git from '../assets/images/git.svg';
 import Insta from '../assets/images/insta.svg';
 import Leetcode from '../assets/images/leetcode.svg';
-import Git from '../assets/images/git.svg';
-import Twitter from '../assets/images/twitter.svg';
 import Linkedin from '../assets/images/linkedin.svg';
-
+import Twitter from '../assets/images/twitter.svg';
 import socials from '../data/socials';
 
-const FooterSection = () => {
+const FooterSection = ({ FootClass }: { FootClass: string }) => {
     return (
         <footer id="footer">
             <div className="footer">
