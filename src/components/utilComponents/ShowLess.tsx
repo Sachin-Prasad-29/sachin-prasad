@@ -1,4 +1,3 @@
-import React from 'react';
 interface Props {
     handleCount: (value: number) => void;
 }
@@ -12,7 +11,6 @@ const ShowLess = ({ handleCount }: Props) => {
                 margin: '0 auto',
             }}
             onClick={(e) => {
-                console.log('hello');
                 handleCount(5);
             }}
         >

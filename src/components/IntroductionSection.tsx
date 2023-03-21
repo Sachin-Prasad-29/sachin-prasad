@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from 'react';
 import { BiCloudDownload } from 'react-icons/bi';
 import Intro from '../assets/images/Intro.gif';
 import { resumeUrl } from '../data/urls';
 
-const IntroductionSection = () => {
+const IntroductionSection: React.FC = () => {
     const styleOne = {
         color: 'rgb(12, 221, 221)',
         fontWeight: 700,
@@ -38,7 +37,7 @@ const IntroductionSection = () => {
                             <a
                                 href={resumeUrl}
                                 target="_blank"
-                                rel="noreferrer"
+                                rel="noopener noreferrer"
                             >
                                 <span> Resume&emsp;</span>
                                 <span>

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Technology } from '../../Interface/TechnologyInterface';
 interface Props {
     tech: Technology;
@@ -6,7 +5,7 @@ interface Props {
 }
 const TechBadges = ({ tech, getTechLogo }: Props) => {
     return (
-        <li >
+        <li>
             <a href={tech.url}>
                 <div className="tech-box">
                     <span>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import myPic2 from '../assets/images/my-pic-2.jpeg';
 import myPic from '../assets/images/my-pic.jpg';
 import BOOT from '../assets/logo/boot.svg';
@@ -21,7 +21,7 @@ import VUE from '../assets/logo/vue.svg';
 import technologies from '../data/technologies';
 import TechBadges from './utilComponents/TechBadges';
 
-const AboutSection = ({ AboutClass }: { AboutClass: string }) => {
+const AboutSection: React.FC<{ AboutClass: string }> = ({ AboutClass }) => {
     const [className, setclassName] = useState<string>('header container');
     useEffect(() => {
         setclassName(`about container reveal ${AboutClass}`);

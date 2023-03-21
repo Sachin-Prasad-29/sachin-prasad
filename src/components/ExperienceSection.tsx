@@ -5,7 +5,7 @@ import experiences from '../data/experiences';
 import { resumeUrl } from '../data/urls';
 import ExperienceBadges from './utilComponents/ExperienceBadges';
 
-const ExperienceSection = ({ ExpClass }: { ExpClass: string }) => {
+const ExperienceSection: React.FC<{ ExpClass: string }> = ({ ExpClass }) => {
     const [className, setclassName] = useState<string>('header container');
     useEffect(() => {
         setclassName(`experience container reveal ${ExpClass}`);

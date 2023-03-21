@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import projects from '../data/projects';
 import { githubUrl } from '../data/urls';
 import LinkIcon from './utilComponents/LinkIcon';
@@ -6,7 +6,9 @@ import ProjectCard from './utilComponents/ProjectCard';
 import ShowLess from './utilComponents/ShowLess';
 import ShowMore from './utilComponents/ShowMore';
 
-const ProjectSection = ({ ProjectClass }: { ProjectClass: string }) => {
+const ProjectSection: React.FC<{ ProjectClass: string }> = ({
+    ProjectClass,
+}) => {
     const [className, setclassName] = useState<string>('header container');
     const [count, setCount] = useState(5);
     useEffect(() => {

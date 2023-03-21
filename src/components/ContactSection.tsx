@@ -1,7 +1,9 @@
 import emailjs from 'emailjs-com';
 import React, { useEffect, useState } from 'react';
 
-const ContactSection = ({ ContactClass }: { ContactClass: string }) => {
+const ContactSection: React.FC<{ ContactClass: string }> = ({
+    ContactClass,
+}) => {
     const [name, setName] = useState<string>('');
     const [email, setEmail] = useState<string>('');
     const [message, setMessage] = useState<string>('');

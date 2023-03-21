@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from 'react';
 import Git from '../assets/images/git.svg';
 import Insta from '../assets/images/insta.svg';
 import Leetcode from '../assets/images/leetcode.svg';
@@ -6,7 +5,7 @@ import Linkedin from '../assets/images/linkedin.svg';
 import Twitter from '../assets/images/twitter.svg';
 import socials from '../data/socials';
 
-const FooterSection = () => {
+const FooterSection: React.FC = () => {
     return (
         <footer id="footer">
             <div className="footer">
@@ -35,7 +34,11 @@ const FooterSection = () => {
                         }
                         return (
                             <li key={social.sNo}>
-                                <a href={social.url} target="_blank">
+                                <a
+                                    href={social.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
                                     <img src={Img} alt="" width={30} />
                                 </a>
                             </li>
@@ -43,7 +46,8 @@ const FooterSection = () => {
                     })}
                 </ul>
                 <p>
-                    Site Build using ➡️ React, Typescript, Scss and lots of Love 💕
+                    Site Build using ➡️ React, Typescript, Scss and lots of Love
+                    💕
                 </p>
                 <p>
                     © <span>{new Date().toISOString().substring(0, 4)}</span> -

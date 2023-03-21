@@ -1,4 +1,3 @@
-import React from 'react';
 import { Project } from '../../Interface/ProjectInterface';
 interface Props {
     handleCount: (value: number) => void;
@@ -14,7 +13,6 @@ const ShowMore = ({ handleCount, projects }: Props) => {
                 margin: '0 auto',
             }}
             onClick={(e) => {
-                console.log('hello');
                 handleCount(projects.length - 1);
             }}
         >

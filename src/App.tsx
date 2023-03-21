@@ -22,39 +22,38 @@ const App: React.FC = () => {
         setWrapperClass('show');
     }, 2000);
 
-    function handleScrollUp() {
-        console.log('Scrolled up!', prevScrollPos);
-        setNavClass('');
-        if (prevScrollPos < 150) {
-            setAboutClass('');
-            setExpClass('');
-            setProjectClass('');
-            setContactClass('');
-        }
-    }
-
-    function handleScrollDown() {
-        console.log('Scrolled down!', prevScrollPos);
-        setNavClass('active');
-        if (prevScrollPos > 150) {
-            // display about us section
-            setAboutClass('active');
-        }
-        if (prevScrollPos > 1300) {
-            // display Experience  section
-            setExpClass('active');
-        }
-        if (prevScrollPos > 2250) {
-            // display Project  section
-            setProjectClass('active');
-        }
-        if (prevScrollPos > 3500) {
-            // display Contact Us  section
-            setContactClass('active');
-        }
-    }
+   
 
     useEffect(() => {
+         function handleScrollUp() {
+             setNavClass('');
+             if (prevScrollPos < 150) {
+                 setAboutClass('');
+                 setExpClass('');
+                 setProjectClass('');
+                 setContactClass('');
+             }
+         }
+
+         function handleScrollDown() {
+             setNavClass('active');
+             if (prevScrollPos > 150) {
+                 // display about us section
+                 setAboutClass('active');
+             }
+             if (prevScrollPos > 1300) {
+                 // display Experience  section
+                 setExpClass('active');
+             }
+             if (prevScrollPos > 2250) {
+                 // display Project  section
+                 setProjectClass('active');
+             }
+             if (prevScrollPos > 3500) {
+                 // display Contact Us  section
+                 setContactClass('active');
+             }
+         }
         function handleScroll() {
             const currentScrollPos = window.pageYOffset;
             if (currentScrollPos > prevScrollPos) {

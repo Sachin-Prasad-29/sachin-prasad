@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import LogoImg from '../assets/images/logo.svg';
 
-const NavBar = ({ NavClass }: { NavClass: string }) => {
+const NavBar: React.FC<{ NavClass: string }> = ({ NavClass }) => {
     const [className, setclassName] = useState<string>('header container');
     const [hamBurgerClass, setHamBurgerClass] = useState<string>('no-select');
     const [mobileMenuClass, setMobileMenuClass] =
