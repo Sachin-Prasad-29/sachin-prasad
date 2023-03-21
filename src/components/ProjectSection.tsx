@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import projects from '../data/projects';
 import { githubUrl } from '../data/urls';
 import LinkIcon from './utilComponents/LinkIcon';
@@ -7,7 +7,11 @@ import ShowLess from './utilComponents/ShowLess';
 import ShowMore from './utilComponents/ShowMore';
 
 const ProjectSection = ({ ProjectClass }: { ProjectClass: string }) => {
+    const [className, setclassName] = useState<string>('header container');
     const [count, setCount] = useState(5);
+    useEffect(() => {
+        setclassName(`work container reveal ${ProjectClass}`);
+    }, [ProjectClass]);
     const numbers = [];
     for (let i = 0; i <= count; i++) {
         numbers.push(i);
@@ -15,10 +19,9 @@ const ProjectSection = ({ ProjectClass }: { ProjectClass: string }) => {
     const handleCount = (value: number) => {
         setCount(value);
     };
-
     return (
         <section id="work">
-            <div className="work container">
+            <div className={className}>
                 <div className="work-info">
                     <h2 className="section-title">Things I've Built.</h2>
                     <p className="section-paragraph">

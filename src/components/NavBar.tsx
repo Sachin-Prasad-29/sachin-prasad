@@ -3,6 +3,19 @@ import LogoImg from '../assets/images/logo.svg';
 
 const NavBar = ({ NavClass }: { NavClass: string }) => {
     const [className, setclassName] = useState<string>('header container');
+    const [hamBurgerClass, setHamBurgerClass] = useState<string>('no-select');
+    const [mobileMenuClass, setMobileMenuClass] =
+        useState<string>('mobile-menu');
+
+    const hamburgerActivated = () => {
+        if (hamBurgerClass === 'no-select') {
+            setHamBurgerClass('no-select active');
+            setMobileMenuClass('mobile-menu active');
+        } else {
+            setHamBurgerClass('no-select');
+            setMobileMenuClass('mobile-menu');
+        }
+    };
     useEffect(() => {
         setclassName(`header container ${NavClass}`);
     }, [NavClass]);
@@ -16,17 +29,26 @@ const NavBar = ({ NavClass }: { NavClass: string }) => {
                         </a>
                     </div>
                     <div className="nav-list">
-                        <label id="hamburger" className="no-select">
+                        <label
+                            id="hamburger"
+                            className={hamBurgerClass}
+                            onClick={(e) => {
+                                hamburgerActivated();
+                            }}
+                        >
                             <span></span>
                             <span></span>
                             <span></span>
                         </label>
-                        <ul className="mobile-menu">
+                        <ul className={mobileMenuClass}>
                             <li>
                                 <a
                                     href="#about"
                                     data-after="About"
                                     className="no-select"
+                                    onClick={(e) => {
+                                        hamburgerActivated();
+                                    }}
                                 >
                                     About
                                 </a>
@@ -36,6 +58,9 @@ const NavBar = ({ NavClass }: { NavClass: string }) => {
                                     href="#experience"
                                     data-after="Experience"
                                     className="no-select"
+                                    onClick={(e) => {
+                                        hamburgerActivated();
+                                    }}
                                 >
                                     Experience
                                 </a>
@@ -45,6 +70,9 @@ const NavBar = ({ NavClass }: { NavClass: string }) => {
                                     href="#work"
                                     data-after="work"
                                     className="no-select"
+                                    onClick={(e) => {
+                                        hamburgerActivated();
+                                    }}
                                 >
                                     Projects
                                 </a>

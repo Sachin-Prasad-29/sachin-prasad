@@ -1,10 +1,14 @@
 import emailjs from 'emailjs-com';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const ContactSection = ({ ContactClass }: { ContactClass: string }) => {
     const [name, setName] = useState<string>('');
     const [email, setEmail] = useState<string>('');
     const [message, setMessage] = useState<string>('');
+    const [className, setclassName] = useState<string>('header container');
+    useEffect(() => {
+        setclassName(`contact container reveal ${ContactClass}`);
+    }, [ContactClass]);
 
     const sendMessage = (e: React.MouseEvent) => {
         e.preventDefault();
@@ -31,7 +35,7 @@ const ContactSection = ({ ContactClass }: { ContactClass: string }) => {
 
     return (
         <section id="contact">
-            <div className="contact container">
+            <div className={className}>
                 <div className="contact-info">
                     <h2 className="section-title">Get In Touch.</h2>
                     <p className="section-paragraph">

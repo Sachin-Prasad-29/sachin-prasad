@@ -12,12 +12,11 @@ import './scss/style.scss';
 const App: React.FC = () => {
     const [wrapperClass, setWrapperClass] = useState<string>('');
     const [NavClass, setNavClass] = useState<string>('');
-    const [IntroClass, setIntroClass] = useState<string>('');
     const [AboutClass, setAboutClass] = useState<string>('');
     const [ExpClass, setExpClass] = useState<string>('');
     const [ProjectClass, setProjectClass] = useState<string>('');
     const [ContactClass, setContactClass] = useState<string>('');
-    const [FootClass, setFootClass] = useState<string>('');
+
     const [prevScrollPos, setPrevScrollPos] = useState(0);
     setTimeout(() => {
         setWrapperClass('show');
@@ -27,19 +26,10 @@ const App: React.FC = () => {
         console.log('Scrolled up!', prevScrollPos);
         setNavClass('');
         if (prevScrollPos < 150) {
-            // hide about us section
-        }
-        if (prevScrollPos < 1300) {
-            // hide Experience  section
-        }
-        if (prevScrollPos < 2250) {
-            // hide Project  section
-        }
-        if (prevScrollPos < 3500) {
-            // hide Contact Us  section
-        }
-        if (prevScrollPos < 4000) {
-            // hide Footer section
+            setAboutClass('');
+            setExpClass('');
+            setProjectClass('');
+            setContactClass('');
         }
     }
 
@@ -48,18 +38,19 @@ const App: React.FC = () => {
         setNavClass('active');
         if (prevScrollPos > 150) {
             // display about us section
+            setAboutClass('active');
         }
         if (prevScrollPos > 1300) {
             // display Experience  section
+            setExpClass('active');
         }
         if (prevScrollPos > 2250) {
             // display Project  section
+            setProjectClass('active');
         }
         if (prevScrollPos > 3500) {
             // display Contact Us  section
-        }
-        if (prevScrollPos > 4000) {
-            // display Footer section
+            setContactClass('active');
         }
     }
 
@@ -84,12 +75,12 @@ const App: React.FC = () => {
             <LoadingDots />
             <div id="wrapper" className={wrapperClass}>
                 <NavBar NavClass={NavClass} />
-                <Introduction IntroClass={IntroClass} />
+                <Introduction />
                 <About AboutClass={AboutClass} />
                 <Experience ExpClass={ExpClass} />
                 <Project ProjectClass={ProjectClass} />
                 <Contact ContactClass={ContactClass} />
-                <Footer FootClass={FootClass} />
+                <Footer />
             </div>
         </div>
     );

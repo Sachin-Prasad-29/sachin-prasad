@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { BiCloudDownload } from 'react-icons/bi';
 import ExLogo from '../assets/images/ex-logo.gif';
 import experiences from '../data/experiences';
@@ -6,9 +6,13 @@ import { resumeUrl } from '../data/urls';
 import ExperienceBadges from './utilComponents/ExperienceBadges';
 
 const ExperienceSection = ({ ExpClass }: { ExpClass: string }) => {
+    const [className, setclassName] = useState<string>('header container');
+    useEffect(() => {
+        setclassName(`experience container reveal ${ExpClass}`);
+    }, [ExpClass]);
     return (
         <section id="experience">
-            <div className="experience container ">
+            <div className={className}>
                 <div className="col-left">
                     <div className="experience-info">
                         <h2 className="section-title">My Personal Journey.</h2>

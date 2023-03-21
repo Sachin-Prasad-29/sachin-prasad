@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { BiCloudDownload } from 'react-icons/bi';
 import Intro from '../assets/images/Intro.gif';
 import { resumeUrl } from '../data/urls';
 
-const IntroductionSection = ({ IntroClass }: { IntroClass: string }) => {
+const IntroductionSection = () => {
     const styleOne = {
         color: 'rgb(12, 221, 221)',
         fontWeight: 700,
@@ -15,6 +15,7 @@ const IntroductionSection = ({ IntroClass }: { IntroClass: string }) => {
         fontFamily: "'Kalam', cursive",
         opacity: 0.5,
     };
+
     return (
         <section id="hero">
             <div className="experience container hero container fadein">
