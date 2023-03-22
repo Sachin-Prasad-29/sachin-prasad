@@ -6,7 +6,7 @@ const experiences: Experience[] = [
         desination: 'Software Product Developer - 1',
         year: 'Present',
         period: 'November 2022 - Present',
-        url: 'www.google.com',
+        url: 'https://xlscout.ai/',
     },
     {
         sNo: 2,
