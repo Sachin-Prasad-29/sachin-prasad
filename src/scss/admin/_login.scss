@@ -1,0 +1,50 @@
+.login-forms {
+    width: 40%;
+    margin: 0 auto;
+    margin-top: 8%;
+
+    h2 {
+        color: var(--textColor);
+    }
+    .input-box {
+        position: relative;
+        margin-top: 3em;
+        margin-bottom: 2em;
+        color: var(--detailsColor);
+
+        input,
+        textarea {
+            width: 100%;
+            border: none;
+            outline: none;
+            border-bottom: 2px solid var(--subtitleColor);
+            resize: none;
+            background-color: transparent;
+            color: var(--textColor);
+        }
+
+        label {
+            position: absolute;
+            left: 0;
+            pointer-events: none;
+            transition: 0.5s;
+        }
+
+        input,
+        textarea,
+        label {
+            padding-block: 0.3125em;
+            margin-block: 0.625em;
+            font-size: 1em;
+        }
+
+        input:focus ~ label,
+        input:valid ~ label,
+        textarea:focus ~ label,
+        textarea:valid ~ label {
+            transform: translateY(-20px);
+            color: var(--subtitleColor);
+            font-size: 0.8em;
+        }
+    }
+}

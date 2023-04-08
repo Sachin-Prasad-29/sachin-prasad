@@ -1,0 +1,17 @@
+@forward '_login';
+
+.admin-main {
+
+    &__options{
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    &__button {
+        margin-right: 10px;
+    }
+}
+
+.fetched-data{
+    color: white;
+}

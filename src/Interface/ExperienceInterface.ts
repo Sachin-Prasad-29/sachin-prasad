@@ -1,5 +1,5 @@
 export interface Experience {
-    sNo: number;
+    sNo?: number;
     org: string;
     desination: string;
     year: string;
