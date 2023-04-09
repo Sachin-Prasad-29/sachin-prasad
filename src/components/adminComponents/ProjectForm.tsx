@@ -1,16 +1,7 @@
 import  { useEffect, useState } from 'react';
 import axios from '../../services/axios.instance ';
+import { ProjectData } from '../../Interface/ProjectInterface';
 
-interface ProjectData {
-    _id: string;
-    image: string;
-    title: string;
-    desc: string;
-    techstack: string[];
-    repoUrl: string;
-    liveUrl: string;
-    __v: number;
-}
 
 const ProjectForm = () => {
     const [proData, setProData] = useState<ProjectData[]>([]);

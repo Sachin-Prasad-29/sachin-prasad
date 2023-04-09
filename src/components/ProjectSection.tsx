@@ -1,16 +1,17 @@
 import { useEffect, useState } from 'react';
-import projects from '../data/projects';
-import { githubUrl } from '../data/urls';
+import { ProjectData } from '../Interface/ProjectInterface';
 import LinkIcon from './utilComponents/LinkIcon';
 import ProjectCard from './utilComponents/ProjectCard';
 import ShowLess from './utilComponents/ShowLess';
 import ShowMore from './utilComponents/ShowMore';
 
-const ProjectSection: React.FC<{ ProjectClass: string }> = ({
-    ProjectClass,
-}) => {
+const ProjectSection: React.FC<{
+    ProjectClass: string;
+    projects: ProjectData[];
+}> = ({ ProjectClass, projects }) => {
     const [className, setclassName] = useState<string>('header container');
     const [count, setCount] = useState(5);
+
     useEffect(() => {
         setclassName(`work container reveal ${ProjectClass}`);
     }, [ProjectClass]);
@@ -31,7 +32,7 @@ const ProjectSection: React.FC<{ ProjectClass: string }> = ({
                         I've worked on to refine my skills. For a more
                         comprehensive list, please feel free to browse my
                         <a
-                            href={githubUrl}
+                            href={process.env.REACT_APP_GETHUB_URL}
                             className="no-select"
                             target="_blank"
                             rel="noopener noreferrer"
@@ -44,13 +45,11 @@ const ProjectSection: React.FC<{ ProjectClass: string }> = ({
                     </p>
                 </div>
                 <div className="work-details">
-                    {numbers.map((num) => (
-                        <ProjectCard
-                            project={projects[num]}
-                            key={projects[num].sNo}
-                        />
+                    {numbers.map((num, index) => (
+                        <ProjectCard project={projects[num]} key={index} />
                     ))}
                 </div>
+                s
             </div>
             {count === 5 && (
                 <ShowMore handleCount={handleCount} projects={projects} />

@@ -1,6 +1,6 @@
-import { Technology } from '../../Interface/TechnologyInterface';
+import { TechData } from '../../Interface/TechnologyInterface';
 interface Props {
-    tech: Technology;
+    tech: TechData;
     getTechLogo: (prop: string) => string | undefined;
 }
 const TechBadges = ({ tech, getTechLogo }: Props) => {

@@ -1,9 +1,10 @@
-export interface Project {
-    sNo: number;
+export interface ProjectData {
+    _id: string;
     image: string;
     title: string;
     desc: string;
-    techStack: string[];
+    techstack: string[];
     repoUrl: string;
     liveUrl: string;
+    __v: number;
 }

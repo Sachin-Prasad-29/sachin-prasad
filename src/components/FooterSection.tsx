@@ -3,9 +3,15 @@ import Insta from '../assets/images/insta.svg';
 import Leetcode from '../assets/images/leetcode.svg';
 import Linkedin from '../assets/images/linkedin.svg';
 import Twitter from '../assets/images/twitter.svg';
-import socials from '../data/socials';
 
-const FooterSection: React.FC = () => {
+interface SocialData {
+    _id: string;
+    logo: string;
+    url: string;
+    __v: number;
+}
+
+const FooterSection: React.FC<{ socials: SocialData[] }> = ({ socials }) => {
     return (
         <footer id="footer">
             <div className="footer">
@@ -33,7 +39,7 @@ const FooterSection: React.FC = () => {
                                 break;
                         }
                         return (
-                            <li key={social.sNo}>
+                            <li key={social._id}>
                                 <a
                                     href={social.url}
                                     target="_blank"

@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { BiCloudDownload } from 'react-icons/bi';
+import { ExpData } from '../Interface/ExperienceInterface';
 import ExLogo from '../assets/images/ex-logo.gif';
-import experiences from '../data/experiences';
-import { resumeUrl } from '../data/urls';
 import ExperienceBadges from './utilComponents/ExperienceBadges';
 
-const ExperienceSection: React.FC<{ ExpClass: string }> = ({ ExpClass }) => {
+const ExperienceSection: React.FC<{
+    ExpClass: string;
+    experiences: ExpData[];
+}> = ({ ExpClass, experiences }) => {
     const [className, setclassName] = useState<string>('header container');
+
     useEffect(() => {
         setclassName(`experience container reveal ${ExpClass}`);
     }, [ExpClass]);
@@ -29,7 +32,7 @@ const ExperienceSection: React.FC<{ ExpClass: string }> = ({ ExpClass }) => {
                             {experiences.map((experience) => (
                                 <ExperienceBadges
                                     experience={experience}
-                                    key={experience.sNo}
+                                    key={experience._id}
                                 />
                             ))}
                         </tbody>
@@ -38,7 +41,7 @@ const ExperienceSection: React.FC<{ ExpClass: string }> = ({ ExpClass }) => {
                     <div className="btn">
                         <button className="btn-resume">
                             <a
-                                href={resumeUrl}
+                                href={process.env.REACT_APP_RESUME_URL}
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >

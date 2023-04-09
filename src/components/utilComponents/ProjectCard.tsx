@@ -1,7 +1,7 @@
-import { Project } from '../../Interface/ProjectInterface';
+import { ProjectData } from '../../Interface/ProjectInterface';
 
 interface Props {
-    project: Project;
+    project: ProjectData;
 }
 const ProjectCard = ({ project }: Props) => {
     return (
@@ -19,7 +19,7 @@ const ProjectCard = ({ project }: Props) => {
             <h2>{project.title}</h2>
             <p>{project.desc} </p>
             <ul className="tech-stack">
-                {project.techStack.map((tech, index) => (
+                {project.techstack.map((tech, index) => (
                     <li key={index}>{tech}</li>
                 ))}
             </ul>
@@ -29,7 +29,7 @@ const ProjectCard = ({ project }: Props) => {
                 target="_blank"
                 rel="noopener noreferrer"
             >
-                <i className="fab fa-github"></i>Repo-link
+                <span>Repo-link</span>
             </a>
 
             <a
@@ -38,8 +38,7 @@ const ProjectCard = ({ project }: Props) => {
                 target="_blank"
                 rel="noopener noreferrer"
             >
-                <i className="fas fa-external-link-alt"></i>
-                Live-link
+                <span>Live-link </span>
             </a>
         </div>
     );
