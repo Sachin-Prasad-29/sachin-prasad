@@ -1,7 +1,7 @@
-import { ProjectData } from '../../Interface/ProjectInterface';
+import { Project } from '../../Interface/ProjectInterface';
 interface Props {
     handleCount: (value: number) => void;
-    projects: ProjectData[];
+    projects: Project[];
 }
 const ShowMore = ({ handleCount, projects }: Props) => {
     return (

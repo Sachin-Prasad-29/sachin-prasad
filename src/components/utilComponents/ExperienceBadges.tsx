@@ -1,7 +1,7 @@
 import { MdWorkOutline } from 'react-icons/md';
-import { ExpData } from '../../Interface/ExperienceInterface';
+import { Experience } from '../../Interface/ExperienceInterface';
 interface Props {
-    experience: ExpData;
+    experience: Experience;
 }
 
 const ExperienceBadges = ({ experience }: Props) => {

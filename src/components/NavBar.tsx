@@ -86,6 +86,24 @@ const NavBar: React.FC<{ NavClass: string }> = ({ NavClass }) => {
                                     Contact
                                 </a>
                             </li>
+                            {/* <li>
+                                <a
+                                    href="#contact"
+                                    data-after="Gallery"
+                                    className="no-select"
+                                >
+                                    Gallery
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="#contact"
+                                    data-after="Admin Login"
+                                    className="no-select"
+                                >
+                                    Admin Login
+                                </a>
+                            </li> */}
                         </ul>
                     </div>
                 </nav>

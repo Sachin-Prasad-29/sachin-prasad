@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-
 import myPic2 from '../assets/images/my-pic-2.jpeg';
 import myPic from '../assets/images/my-pic.jpg';
 import BOOT from '../assets/logo/boot.svg';
@@ -19,15 +18,14 @@ import SASS from '../assets/logo/sass.svg';
 import SQL from '../assets/logo/sql.svg';
 import TS from '../assets/logo/ts.svg';
 import VUE from '../assets/logo/vue.svg';
-import { TechData } from '../Interface/TechnologyInterface';
-
+import technologies from '../data/technologies';
 import TechBadges from './utilComponents/TechBadges';
 
-const AboutSection: React.FC<{
-    AboutClass: string;
-    technologies: TechData[];
-}> = ({ AboutClass, technologies }) => {
+const AboutSection: React.FC<{ AboutClass: string }> = ({ AboutClass }) => {
     const [className, setclassName] = useState<string>('header container');
+    useEffect(() => {
+        setclassName(`about container reveal ${AboutClass}`);
+    }, [AboutClass]);
     const getTechLogo = (prop: string) => {
         switch (prop) {
             case 'JS':
@@ -66,10 +64,6 @@ const AboutSection: React.FC<{
                 return VUE;
         }
     };
-    useEffect(() => {
-        setclassName(`about container reveal ${AboutClass}`);
-    }, [AboutClass]);
-
     return (
         <section id="about">
             <div className={className}>
@@ -109,7 +103,7 @@ const AboutSection: React.FC<{
                             <TechBadges
                                 tech={tech}
                                 getTechLogo={getTechLogo}
-                                key={tech._id}
+                                key={tech.sNo}
                             />
                         ))}
                     </ul>
@@ -117,9 +111,6 @@ const AboutSection: React.FC<{
                 <div className="col-right">
                     <div className="about-image">
                         <img src={myPic} alt="my-profile-pic" width={50} />
-                    </div>
-                    <div className="about-image">
-                        <img src={myPic2} alt="my-profile-pic" width={50} />
                     </div>
                 </div>
             </div>

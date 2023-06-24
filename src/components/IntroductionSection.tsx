@@ -1,5 +1,6 @@
 import { BiCloudDownload } from 'react-icons/bi';
 import Intro from '../assets/images/Intro.gif';
+import { resumeUrl } from '../data/urls';
 
 const IntroductionSection: React.FC = () => {
     const styleOne = {
@@ -34,7 +35,7 @@ const IntroductionSection: React.FC = () => {
                     <div className="btn">
                         <button className="btn-resume">
                             <a
-                                href={process.env.REACT_APP_RESUME_URL}
+                                href={resumeUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >

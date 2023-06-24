@@ -1,5 +1,5 @@
-@use '../abstracts' as *;
-@use '../util' as *;
+@use "../abstracts" as *;
+@use "../util" as *;
 
 .experience {
     @include flexCenter(flex, space-around, center, row);
@@ -62,6 +62,7 @@
 
             .avatar {
                 @include widthHeight(110%, 110%);
+                
             }
         }
     }
