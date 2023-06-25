@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import myPic2 from '../assets/images/my-pic-2.jpeg';
 import myPic from '../assets/images/my-pic.jpg';
 import BOOT from '../assets/logo/boot.svg';
 import CSS from '../assets/logo/css.svg';

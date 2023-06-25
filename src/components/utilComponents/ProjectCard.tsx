@@ -7,7 +7,11 @@ const ProjectCard = ({ project }: Props) => {
     return (
         <div className="card">
             <div className="icon">
-                <iframe src={project.liveUrl} scrolling="no"></iframe>
+                <iframe
+                    src={project.liveUrl}
+                    scrolling="no"
+                    title={project.title}
+                ></iframe>
             </div>
             <h2>{project.title}</h2>
             <p>{project.desc} </p>
